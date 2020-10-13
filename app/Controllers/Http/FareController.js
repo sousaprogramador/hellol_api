@@ -27,7 +27,9 @@ class FareController {
     const planQuery = await Plan.query().where('id', planId).first();
 
     const priceTotal = minutes * minutePrice;
+
     const minExcetd = planQuery.minutes_use_it - minutes;
+
     const priceAdd = minExcetd * minutePrice * 0.1;
 
     const planRemuse = {
